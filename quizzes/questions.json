@@ -1,0 +1,832 @@
+{
+  "Quiz": [
+    {
+      "type": "singleSelect",
+      "Question": "Qual arquivo contém informações sobre senhas e políticas de expiração dos usuários?",
+      "Options": ["/etc/passwd", "/etc/login.defs", "/etc/group", "/etc/shadow"],
+      "Answer": [3],
+      "Explanation": "O arquivo `/etc/shadow` contém as senhas criptografadas dos usuários e informações de expiração.",
+      "Hint": "É o arquivo que guarda senhas criptografadas."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando adiciona um usuário ao grupo suplementar 'wheel'?",
+      "Options": ["useradd -G wheel aluno", "usermod -aG wheel aluno", "passwd -g wheel aluno", "groupadd wheel aluno"],
+      "Answer": [1],
+      "Explanation": "O comando `usermod -aG wheel aluno` adiciona o usuário 'aluno' ao grupo suplementar 'wheel'.",
+      "Hint": "Use o comando que modifica atributos de usuário."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando altera a senha de um usuário?",
+      "Options": ["passwd usuario", "chsh usuario", "usermod -p usuario", "groupmod usuario"],
+      "Answer": [0],
+      "Explanation": "O comando `passwd usuario` altera a senha do usuário especificado.",
+      "Hint": "É o comando mais direto para trocar senha."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando cria um usuário com diretório home?",
+      "Options": ["useradd aluno", "useradd -m aluno", "adduser aluno", "mkuser aluno"],
+      "Answer": [1],
+      "Explanation": "O parâmetro `-m` garante a criação do diretório home.",
+      "Hint": "Procure pela opção que cria o home."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual arquivo define políticas de senha como tamanho mínimo?",
+      "Options": ["/etc/shadow", "/etc/login.defs", "/etc/passwd", "/etc/group"],
+      "Answer": [1],
+      "Explanation": "O arquivo `/etc/login.defs` define políticas como tamanho mínimo de senha.",
+      "Hint": "É o arquivo de definições globais de login."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra UID e GID de um usuário?",
+      "Options": ["whoami", "id usuario", "groups usuario", "ls -l usuario"],
+      "Answer": [1],
+      "Explanation": "O comando `id usuario` mostra UID, GID e grupos.",
+      "Hint": "É o comando que retorna UID/GID."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando remove um usuário e seu diretório home?",
+      "Options": ["userdel usuario", "userdel -r usuario", "deluser usuario", "rm -rf /home/usuario"],
+      "Answer": [1],
+      "Explanation": "O parâmetro `-r` remove também o diretório home.",
+      "Hint": "Procure pela opção que remove tudo."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando lista todos os grupos de um usuário?",
+      "Options": ["id usuario", "groups usuario", "cat /etc/group", "whoami"],
+      "Answer": [1],
+      "Explanation": "O comando `groups usuario` lista todos os grupos suplementares.",
+      "Hint": "É o comando que mostra grupos."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando altera o shell padrão de um usuário?",
+      "Options": ["chsh usuario", "usermod -s /bin/bash usuario", "shellmod usuario", "passwd -s usuario"],
+      "Answer": [1],
+      "Explanation": "O comando `usermod -s /bin/bash usuario` altera o shell padrão.",
+      "Hint": "Procure pela opção que usa `-s`."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando bloqueia a conta de um usuário?",
+      "Options": ["passwd -l usuario", "usermod -L usuario", "lockuser usuario", "disable usuario"],
+      "Answer": [0],
+      "Explanation": "O comando `passwd -l usuario` bloqueia a conta.",
+      "Hint": "É feito via `passwd`."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando desbloqueia a conta de um usuário?",
+      "Options": ["passwd -u usuario", "usermod -U usuario", "unlock usuario", "enable usuario"],
+      "Answer": [0],
+      "Explanation": "O comando `passwd -u usuario` desbloqueia a conta previamente bloqueada.",
+      "Hint": "É feito via `passwd`."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando expira a senha de um usuário imediatamente?",
+      "Options": ["passwd -e usuario", "chage -d 0 usuario", "expire usuario", "usermod -E usuario"],
+      "Answer": [1],
+      "Explanation": "O comando `chage -d 0 usuario` força o usuário a trocar a senha no próximo login.",
+      "Hint": "Procure pelo comando que zera a data."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando define a data de expiração da conta?",
+      "Options": ["chage -E 2026-12-31 usuario", "usermod -e 2026-12-31 usuario", "expire usuario 2026-12-31", "passwd -E usuario"],
+      "Answer": [0],
+      "Explanation": "O comando `chage -E data usuario` define a data de expiração da conta.",
+      "Hint": "É feito com `chage`."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando cria um grupo novo?",
+      "Options": ["groupadd grupo", "mkgroup grupo", "addgroup grupo", "newgrp grupo"],
+      "Answer": [0],
+      "Explanation": "O comando `groupadd grupo` cria um novo grupo.",
+      "Hint": "É o comando padrão para grupos."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando altera o GID de um grupo?",
+      "Options": ["groupmod -g 500 grupo", "usermod -g 500 grupo", "chgrp -g 500 grupo", "gidmod grupo"],
+      "Answer": [0],
+      "Explanation": "O comando `groupmod -g novoGID grupo` altera o identificador do grupo.",
+      "Hint": "Procure pelo comando que modifica grupo."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando remove um grupo?",
+      "Options": ["groupdel grupo", "delgroup grupo", "rmgroup grupo", "rmdir grupo"],
+      "Answer": [0],
+      "Explanation": "O comando `groupdel grupo` remove um grupo existente.",
+      "Hint": "É o comando padrão para deletar grupo."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando altera o nome de um grupo?",
+      "Options": ["groupmod -n novo grupo", "mvgroup grupo novo", "rename grupo novo", "chgrp -n grupo novo"],
+      "Answer": [0],
+      "Explanation": "O comando `groupmod -n novo grupo` altera o nome do grupo.",
+      "Hint": "É feito com `groupmod`."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando muda o grupo proprietário de um arquivo?",
+      "Options": ["chgrp grupo arquivo", "chown :grupo arquivo", "groupmod arquivo grupo", "setgrp arquivo grupo"],
+      "Answer": [0],
+      "Explanation": "O comando `chgrp grupo arquivo` altera o grupo proprietário do arquivo.",
+      "Hint": "É o comando específico para grupo."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando define o grupo primário de um usuário?",
+      "Options": ["usermod -g grupo usuario", "groupmod -u usuario grupo", "chgrp usuario grupo", "setgrp usuario grupo"],
+      "Answer": [0],
+      "Explanation": "O comando `usermod -g grupo usuario` define o grupo primário do usuário.",
+      "Hint": "É feito com `usermod`."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando adiciona múltiplos grupos suplementares a um usuário?",
+      "Options": ["usermod -aG grupo1,grupo2 usuario", "groupadd usuario grupo1 grupo2", "adduser usuario grupo1 grupo2", "chgrp usuario grupo1 grupo2"],
+      "Answer": [0],
+      "Explanation": "O comando `usermod -aG grupo1,grupo2 usuario` adiciona múltiplos grupos suplementares.",
+      "Hint": "Procure pela opção com `-aG`."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe o status das interfaces de rede?",
+      "Options": ["nmcli device status", "ip link show", "ifconfig -a", "netstat -i"],
+      "Answer": [0],
+      "Explanation": "O comando `nmcli device status` mostra o estado das interfaces gerenciadas pelo NetworkManager.",
+      "Hint": "É o comando moderno do NetworkManager."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando adiciona uma conexão Ethernet com IP estático?",
+      "Options": [
+        "nmcli con add type ethernet con-name static ifname eth0 ip4 192.168.1.100/24 gw4 192.168.1.1",
+        "ifconfig eth0 192.168.1.100 netmask 255.255.255.0",
+        "ip addr add 192.168.1.100/24 dev eth0",
+        "netstat -i eth0 192.168.1.100"
+      ],
+      "Answer": [0],
+      "Explanation": "O comando `nmcli con add ...` cria uma conexão estática com IP e gateway.",
+      "Hint": "É o comando moderno do NetworkManager."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando ativa uma conexão criada com nmcli?",
+      "Options": ["nmcli con up static", "ifup eth0", "ip link set eth0 up", "netstart eth0"],
+      "Answer": [0],
+      "Explanation": "O comando `nmcli con up nome` ativa a conexão configurada.",
+      "Hint": "Procure pelo comando nmcli."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando altera o hostname do sistema?",
+      "Options": [
+        "hostnamectl set-hostname servidor1",
+        "nmcli hostname servidor1",
+        "sethostname servidor1",
+        "echo servidor1 > /etc/hostname"
+      ],
+      "Answer": [0],
+      "Explanation": "O comando `hostnamectl set-hostname` altera o hostname de forma persistente.",
+      "Hint": "É feito com `hostnamectl`."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual arquivo é usado para configurar DNS manualmente?",
+      "Options": ["/etc/resolv.conf", "/etc/hosts", "/etc/network/dns", "/etc/sysconfig/dns"],
+      "Answer": [0],
+      "Explanation": "O arquivo `/etc/resolv.conf` define servidores DNS manualmente.",
+      "Hint": "É o arquivo tradicional de DNS."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra rotas de rede?",
+      "Options": ["ip route", "netstat -r", "route -n", "nmcli route show"],
+      "Answer": [0],
+      "Explanation": "O comando `ip route` exibe as rotas configuradas.",
+      "Hint": "É o comando moderno da suíte ip."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando testa conectividade com outro host?",
+      "Options": ["ping host", "curl host", "telnet host", "traceroute host"],
+      "Answer": [0],
+      "Explanation": "O comando `ping` envia pacotes ICMP para testar conectividade.",
+      "Hint": "É o comando mais usado para teste rápido."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra portas abertas e conexões ativas?",
+      "Options": ["ss -tuln", "netstat -tuln", "lsof -i", "iptables -L"],
+      "Answer": [0],
+      "Explanation": "O comando `ss -tuln` mostra sockets ativos e portas abertas.",
+      "Hint": "É o substituto moderno do netstat."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe informações detalhadas de uma interface?",
+      "Options": ["ip addr show eth0", "ifconfig eth0", "nmcli device show eth0", "ethtool eth0"],
+      "Answer": [2],
+      "Explanation": "O comando `nmcli device show eth0` exibe informações detalhadas da interface.",
+      "Hint": "É feito com nmcli."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando reinicia o serviço de rede no RHEL?",
+      "Options": [
+        "systemctl restart NetworkManager",
+        "service network restart",
+        "systemctl restart network",
+        "nmcli restart"
+      ],
+      "Answer": [0],
+      "Explanation": "O comando `systemctl restart NetworkManager` reinicia o serviço de rede no RHEL.",
+      "Hint": "É feito via systemctl."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe estatísticas de pacotes enviados e recebidos por uma interface?",
+      "Options": ["ifconfig eth0", "ip -s link show eth0", "netstat -i eth0", "nmcli device stats eth0"],
+      "Answer": [1],
+      "Explanation": "O comando `ip -s link show eth0` mostra estatísticas de pacotes da interface.",
+      "Hint": "É feito com o comando `ip`."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra o caminho percorrido pelos pacotes até um destino?",
+      "Options": ["ping destino", "traceroute destino", "netstat destino", "route destino"],
+      "Answer": [1],
+      "Explanation": "O comando `traceroute` mostra o caminho percorrido pelos pacotes até o destino.",
+      "Hint": "É usado para rastrear rotas."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual arquivo define o hostname persistente do sistema?",
+      "Options": ["/etc/hostname", "/etc/hosts", "/etc/sysconfig/network", "/etc/network/hostname"],
+      "Answer": [0],
+      "Explanation": "O arquivo `/etc/hostname` define o hostname persistente.",
+      "Hint": "É o arquivo simples com apenas o nome."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando desativa uma interface de rede?",
+      "Options": ["ip link set eth0 down", "nmcli con down eth0", "ifdown eth0", "systemctl stop eth0"],
+      "Answer": [0],
+      "Explanation": "O comando `ip link set eth0 down` desativa a interface.",
+      "Hint": "É feito com `ip link`."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra conexões TCP ativas?",
+      "Options": ["ss -t", "netstat -t", "lsof -i tcp", "ip tcp show"],
+      "Answer": [0],
+      "Explanation": "O comando `ss -t` mostra conexões TCP ativas.",
+      "Hint": "É o substituto moderno do netstat."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando configura um endereço IPv6 em uma interface?",
+      "Options": [
+        "ip -6 addr add 2001:db8::1/64 dev eth0",
+        "ifconfig eth0 inet6 2001:db8::1/64",
+        "nmcli con add ipv6.addresses 2001:db8::1/64",
+        "netstat -6 eth0 2001:db8::1"
+      ],
+      "Answer": [0],
+      "Explanation": "O comando `ip -6 addr add ...` configura IPv6 na interface.",
+      "Hint": "É feito com `ip -6`."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra estatísticas de conexões de rede?",
+      "Options": ["netstat -s", "ss -s", "nmcli stats", "ip stats"],
+      "Answer": [1],
+      "Explanation": "O comando `ss -s` mostra estatísticas de conexões.",
+      "Hint": "É o comando moderno."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe informações sobre DNS configurado?",
+      "Options": ["nmcli device show eth0 | grep DNS", "cat /etc/resolv.conf", "systemd-resolve --status", "dig google.com"],
+      "Answer": [2],
+      "Explanation": "O comando `systemd-resolve --status` mostra informações detalhadas sobre DNS.",
+      "Hint": "É feito com systemd-resolve."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando adiciona uma rota estática?",
+      "Options": [
+        "ip route add 192.168.2.0/24 via 192.168.1.1",
+        "route add -net 192.168.2.0 netmask 255.255.255.0 gw 192.168.1.1",
+        "nmcli con mod static +ipv4.routes '192.168.2.0/24 192.168.1.1'",
+        "netstat -A route add 192.168.2.0 gw 192.168.1.1"
+      ],
+      "Answer": [0],
+      "Explanation": "O comando `ip route add ...` adiciona uma rota estática.",
+      "Hint": "É feito com `ip route`."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra a tabela ARP?",
+      "Options": ["arp -n", "ip neigh show", "nmcli arp show", "netstat -arp"],
+      "Answer": [1],
+      "Explanation": "O comando `ip neigh show` mostra a tabela ARP.",
+      "Hint": "É feito com `ip neigh`."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando lista todos os discos disponíveis no sistema?",
+      "Options": ["lsblk", "fdisk -l", "blkid", "df -h"],
+      "Answer": [0],
+      "Explanation": "O comando `lsblk` lista todos os dispositivos de bloco e suas partições.",
+      "Hint": "É o comando que mostra árvore de dispositivos."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe informações detalhadas sobre partições?",
+      "Options": ["lsblk -f", "fdisk -l", "parted -l", "blkid"],
+      "Answer": [1],
+      "Explanation": "O comando `fdisk -l` mostra detalhes das partições e tabelas de disco.",
+      "Hint": "É feito com fdisk."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando cria um novo sistema de arquivos ext4?",
+      "Options": ["mkfs.ext4 /dev/sdb1", "mkfs -t ext4 /dev/sdb1", "mke2fs -t ext4 /dev/sdb1", "format ext4 /dev/sdb1"],
+      "Answer": [0],
+      "Explanation": "O comando `mkfs.ext4 /dev/sdb1` cria um sistema de arquivos ext4.",
+      "Hint": "Procure pelo mkfs."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual arquivo contém as entradas de montagem persistente?",
+      "Options": ["/etc/fstab", "/etc/mtab", "/etc/mounts", "/etc/storage"],
+      "Answer": [0],
+      "Explanation": "O arquivo `/etc/fstab` define as montagens persistentes.",
+      "Hint": "É o arquivo clássico de montagem."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando monta um sistema de arquivos manualmente?",
+      "Options": ["mount /dev/sdb1 /mnt", "umount /mnt", "lsblk /mnt", "df -h /mnt"],
+      "Answer": [0],
+      "Explanation": "O comando `mount dispositivo diretório` monta o sistema de arquivos.",
+      "Hint": "É feito com mount."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando desmonta um sistema de arquivos?",
+      "Options": ["umount /mnt", "mount -u /mnt", "df -h /mnt", "lsblk -u /mnt"],
+      "Answer": [0],
+      "Explanation": "O comando `umount /mnt` desmonta o sistema de arquivos.",
+      "Hint": "É o inverso de mount."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe uso de espaço em disco?",
+      "Options": ["df -h", "du -sh /", "lsblk -f", "fdisk -l"],
+      "Answer": [0],
+      "Explanation": "O comando `df -h` mostra uso de espaço em disco em formato legível.",
+      "Hint": "É feito com df."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra uso de espaço por diretório?",
+      "Options": ["du -sh /home", "df -h /home", "ls -lh /home", "lsblk /home"],
+      "Answer": [0],
+      "Explanation": "O comando `du -sh diretório` mostra uso de espaço por diretório.",
+      "Hint": "É feito com du."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando verifica integridade de um sistema de arquivos?",
+      "Options": ["fsck /dev/sdb1", "chkfs /dev/sdb1", "verifyfs /dev/sdb1", "mount -c /dev/sdb1"],
+      "Answer": [0],
+      "Explanation": "O comando `fsck` verifica e corrige erros em sistemas de arquivos.",
+      "Hint": "É feito com fsck."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe UUID de partições?",
+      "Options": ["blkid", "lsblk -f", "fdisk -l", "uuidshow"],
+      "Answer": [0],
+      "Explanation": "O comando `blkid` mostra UUID e tipo de sistema de arquivos.",
+      "Hint": "É feito com blkid."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando cria um volume lógico (LV) em LVM?",
+      "Options": ["lvcreate -n lv1 -L 10G vg0", "vgcreate -n lv1 -L 10G vg0", "mkfs.lv vg0 lv1", "lvadd vg0 lv1"],
+      "Answer": [0],
+      "Explanation": "O comando `lvcreate -n lv1 -L 10G vg0` cria um volume lógico de 10GB no volume group vg0.",
+      "Hint": "É feito com lvcreate."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando cria um volume group (VG) em LVM?",
+      "Options": ["vgcreate vg0 /dev/sdb1", "lvcreate vg0 /dev/sdb1", "mkvg vg0 /dev/sdb1", "vgadd vg0 /dev/sdb1"],
+      "Answer": [0],
+      "Explanation": "O comando `vgcreate vg0 /dev/sdb1` cria um volume group usando o dispositivo /dev/sdb1.",
+      "Hint": "É feito com vgcreate."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando cria um physical volume (PV) em LVM?",
+      "Options": ["pvcreate /dev/sdb1", "mkpv /dev/sdb1", "vgcreate /dev/sdb1", "lvcreate /dev/sdb1"],
+      "Answer": [0],
+      "Explanation": "O comando `pvcreate /dev/sdb1` inicializa o dispositivo como physical volume.",
+      "Hint": "É feito com pvcreate."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe informações sobre volumes lógicos?",
+      "Options": ["lvdisplay", "vgdisplay", "pvdisplay", "lsblk"],
+      "Answer": [0],
+      "Explanation": "O comando `lvdisplay` mostra informações detalhadas sobre volumes lógicos.",
+      "Hint": "É feito com lvdisplay."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando aumenta o tamanho de um volume lógico?",
+      "Options": ["lvextend -L +5G /dev/vg0/lv1", "vgextend -L +5G /dev/vg0/lv1", "resize2fs /dev/vg0/lv1", "lvresize -L +5G /dev/vg0/lv1"],
+      "Answer": [0],
+      "Explanation": "O comando `lvextend -L +5G /dev/vg0/lv1` aumenta o tamanho do volume lógico.",
+      "Hint": "É feito com lvextend."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando reduz o tamanho de um volume lógico?",
+      "Options": ["lvreduce -L -5G /dev/vg0/lv1", "lvresize -L -5G /dev/vg0/lv1", "vgreduce -L -5G /dev/vg0/lv1", "pvreduce -L -5G /dev/vg0/lv1"],
+      "Answer": [0],
+      "Explanation": "O comando `lvreduce` reduz o tamanho de um volume lógico.",
+      "Hint": "É feito com lvreduce."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando redimensiona um sistema de arquivos ext4 após aumentar o LV?",
+      "Options": ["resize2fs /dev/vg0/lv1", "lvresize /dev/vg0/lv1", "fsck -r /dev/vg0/lv1", "mkfs.ext4 /dev/vg0/lv1"],
+      "Answer": [0],
+      "Explanation": "O comando `resize2fs` ajusta o sistema de arquivos ext4 ao novo tamanho do LV.",
+      "Hint": "É feito com resize2fs."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe informações sobre volume groups?",
+      "Options": ["vgdisplay", "lvdisplay", "pvdisplay", "lsblk -f"],
+      "Answer": [0],
+      "Explanation": "O comando `vgdisplay` mostra informações detalhadas sobre volume groups.",
+      "Hint": "É feito com vgdisplay."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe informações sobre physical volumes?",
+      "Options": ["pvdisplay", "lvdisplay", "vgdisplay", "lsblk"],
+      "Answer": [0],
+      "Explanation": "O comando `pvdisplay` mostra informações detalhadas sobre physical volumes.",
+      "Hint": "É feito com pvdisplay."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando remove um volume lógico?",
+      "Options": ["lvremove /dev/vg0/lv1", "vgremove /dev/vg0/lv1", "pvremove /dev/vg0/lv1", "rm -rf /dev/vg0/lv1"],
+      "Answer": [0],
+      "Explanation": "O comando `lvremove` remove um volume lógico existente.",
+      "Hint": "É feito com lvremove."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando altera permissões de um arquivo?",
+      "Options": ["chmod 755 arquivo", "chown usuario arquivo", "chgrp grupo arquivo", "ls -l arquivo"],
+      "Answer": [0],
+      "Explanation": "O comando `chmod` altera permissões de leitura, escrita e execução.",
+      "Hint": "É feito com chmod."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando altera o dono de um arquivo?",
+      "Options": ["chown usuario arquivo", "chmod usuario arquivo", "chgrp usuario arquivo", "ls -l arquivo"],
+      "Answer": [0],
+      "Explanation": "O comando `chown` altera o proprietário de um arquivo.",
+      "Hint": "É feito com chown."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando altera o grupo de um arquivo?",
+      "Options": ["chgrp grupo arquivo", "chown :grupo arquivo", "chmod grupo arquivo", "ls -l arquivo"],
+      "Answer": [0],
+      "Explanation": "O comando `chgrp` altera o grupo proprietário de um arquivo.",
+      "Hint": "É feito com chgrp."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe permissões de arquivos?",
+      "Options": ["ls -l", "chmod -l", "chown -l", "stat -p"],
+      "Answer": [0],
+      "Explanation": "O comando `ls -l` mostra permissões, dono e grupo dos arquivos.",
+      "Hint": "É feito com ls -l."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando define permissões recursivamente?",
+      "Options": ["chmod -R 755 /diretorio", "chown -R usuario /diretorio", "chgrp -R grupo /diretorio", "ls -lR /diretorio"],
+      "Answer": [0],
+      "Explanation": "O parâmetro `-R` aplica permissões recursivamente.",
+      "Hint": "Procure pelo -R."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe permissões em formato numérico?",
+      "Options": ["stat arquivo", "ls -l arquivo", "chmod arquivo", "id arquivo"],
+      "Answer": [0],
+      "Explanation": "O comando `stat` mostra permissões em formato numérico (octal).",
+      "Hint": "É feito com stat."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando define ACLs em arquivos?",
+      "Options": ["setfacl -m u:usuario:r arquivo", "getfacl arquivo", "chmod +a usuario arquivo", "aclset usuario arquivo"],
+      "Answer": [0],
+      "Explanation": "O comando `setfacl` define ACLs em arquivos.",
+      "Hint": "É feito com setfacl."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe ACLs de arquivos?",
+      "Options": ["getfacl arquivo", "ls -l arquivo", "stat arquivo", "showacl arquivo"],
+      "Answer": [0],
+      "Explanation": "O comando `getfacl` mostra ACLs configuradas em arquivos.",
+      "Hint": "É feito com getfacl."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando define máscara de criação de arquivos?",
+      "Options": ["umask 022", "chmod 022", "chown 022", "maskset 022"],
+      "Answer": [0],
+      "Explanation": "O comando `umask` define a máscara padrão de criação de arquivos.",
+      "Hint": "É feito com umask."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando lista processos ativos com dono e permissões?",
+      "Options": ["ps -ef", "top", "htop", "lsproc"],
+      "Answer": [0],
+      "Explanation": "O comando `ps -ef` lista processos ativos com dono e PID.",
+      "Hint": "É feito com ps."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando lista tentativas de login no sistema?",
+      "Options": ["last", "lastlog", "who", "w"],
+      "Answer": [0],
+      "Explanation": "O comando `last` mostra histórico de logins e logouts.",
+      "Hint": "É feito com last."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra último login de cada usuário?",
+      "Options": ["lastlog", "last", "who", "id"],
+      "Answer": [0],
+      "Explanation": "O comando `lastlog` mostra o último login de cada usuário.",
+      "Hint": "É feito com lastlog."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual arquivo registra mensagens de autenticação?",
+      "Options": ["/var/log/auth.log", "/var/log/messages", "/var/log/secure", "/etc/shadow"],
+      "Answer": [0],
+      "Explanation": "O arquivo `/var/log/auth.log` registra eventos de autenticação.",
+      "Hint": "É o log de auth."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe usuários atualmente logados?",
+      "Options": ["who", "w", "users", "id"],
+      "Answer": [0],
+      "Explanation": "O comando `who` mostra usuários logados no sistema.",
+      "Hint": "É feito com who."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra processos em execução por usuário?",
+      "Options": ["ps -u usuario", "top -u usuario", "htop -u usuario", "lsproc usuario"],
+      "Answer": [0],
+      "Explanation": "O comando `ps -u usuario` lista processos do usuário.",
+      "Hint": "É feito com ps."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe permissões especiais como SUID?",
+      "Options": ["ls -l", "find / -perm -4000", "stat arquivo", "chmod arquivo"],
+      "Answer": [1],
+      "Explanation": "O comando `find / -perm -4000` lista arquivos com SUID.",
+      "Hint": "É feito com find."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra falhas de login?",
+      "Options": ["lastb", "lastlog", "authfail", "who -f"],
+      "Answer": [0],
+      "Explanation": "O comando `lastb` mostra tentativas de login mal sucedidas.",
+      "Hint": "É feito com lastb."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando exibe permissões de firewall no RHEL?",
+      "Options": ["firewall-cmd --list-all", "iptables -L", "ufw status", "systemctl status firewalld"],
+      "Answer": [0],
+      "Explanation": "O comando `firewall-cmd --list-all` mostra regras do firewalld.",
+      "Hint": "É feito com firewall-cmd."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando ativa SELinux em modo enforcing?",
+      "Options": ["setenforce 1", "getenforce 1", "sestatus enforcing", "selinuxctl enforcing"],
+      "Answer": [0],
+      "Explanation": "O comando `setenforce 1` ativa SELinux em modo enforcing.",
+      "Hint": "É feito com setenforce."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual arquivo define política de SELinux?",
+      "Options": ["/etc/selinux/config", "/etc/selinux/policy", "/etc/security/selinux", "/var/log/selinux"],
+      "Answer": [0],
+      "Explanation": "O arquivo `/etc/selinux/config` define a política de SELinux.",
+      "Hint": "É o arquivo config."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando lista todos os serviços ativos no sistema?",
+      "Options": ["systemctl list-units --type=service", "service --status-all", "ps -ef", "ls /etc/systemd/system"],
+      "Answer": [0],
+      "Explanation": "O comando `systemctl list-units --type=service` mostra todos os serviços ativos.",
+      "Hint": "É feito com systemctl."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando inicia um serviço no systemd?",
+      "Options": ["systemctl start serviço", "service serviço start", "initctl start serviço", "runservice serviço"],
+      "Answer": [0],
+      "Explanation": "O comando `systemctl start serviço` inicia o serviço especificado.",
+      "Hint": "É feito com systemctl."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando habilita um serviço para iniciar no boot?",
+      "Options": ["systemctl enable serviço", "chkconfig serviço on", "service serviço enable", "initctl enable serviço"],
+      "Answer": [0],
+      "Explanation": "O comando `systemctl enable serviço` habilita o serviço para iniciar automaticamente.",
+      "Hint": "É feito com systemctl."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando desabilita um serviço no boot?",
+      "Options": ["systemctl disable serviço", "chkconfig serviço off", "service serviço disable", "initctl disable serviço"],
+      "Answer": [0],
+      "Explanation": "O comando `systemctl disable serviço` desabilita o serviço no boot.",
+      "Hint": "É feito com systemctl."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando reinicia um serviço?",
+      "Options": ["systemctl restart serviço", "service serviço restart", "initctl restart serviço", "reload serviço"],
+      "Answer": [0],
+      "Explanation": "O comando `systemctl restart serviço` reinicia o serviço.",
+      "Hint": "É feito com systemctl."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra status de um serviço?",
+      "Options": ["systemctl status serviço", "service serviço status", "initctl status serviço", "ps -ef | grep serviço"],
+      "Answer": [0],
+      "Explanation": "O comando `systemctl status serviço` mostra status detalhado do serviço.",
+      "Hint": "É feito com systemctl."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando lista processos ativos?",
+      "Options": ["ps -ef", "top", "htop", "jobs"],
+      "Answer": [0],
+      "Explanation": "O comando `ps -ef` lista todos os processos ativos com detalhes.",
+      "Hint": "É feito com ps."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra processos em tempo real?",
+      "Options": ["top", "htop", "ps -ef", "jobs -l"],
+      "Answer": [0],
+      "Explanation": "O comando `top` mostra processos em tempo real.",
+      "Hint": "É feito com top."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mata um processo pelo PID?",
+      "Options": ["kill PID", "pkill PID", "killall PID", "end PID"],
+      "Answer": [0],
+      "Explanation": "O comando `kill PID` encerra o processo com o identificador especificado.",
+      "Hint": "É feito com kill."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mata processos por nome?",
+      "Options": ["pkill nome", "killall nome", "kill nome", "end nome"],
+      "Answer": [0],
+      "Explanation": "O comando `pkill nome` encerra processos pelo nome.",
+      "Hint": "É feito com pkill."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra processos filhos de um PID específico?",
+      "Options": ["pstree -p PID", "ps --ppid PID", "top -p PID", "htop -p PID"],
+      "Answer": [0],
+      "Explanation": "O comando `pstree -p PID` mostra a árvore de processos e filhos de um PID.",
+      "Hint": "É feito com pstree."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando envia sinal de término a um processo?",
+      "Options": ["kill -TERM PID", "kill -9 PID", "pkill -TERM nome", "end PID"],
+      "Answer": [0],
+      "Explanation": "O comando `kill -TERM PID` envia sinal de término (graceful) ao processo.",
+      "Hint": "É feito com kill."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando força encerramento imediato de um processo?",
+      "Options": ["kill -9 PID", "pkill -9 nome", "killall -9 nome", "end -9 PID"],
+      "Answer": [0],
+      "Explanation": "O comando `kill -9 PID` força encerramento imediato do processo.",
+      "Hint": "É feito com kill -9."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando lista jobs em segundo plano?",
+      "Options": ["jobs", "ps -ef", "bg", "fg"],
+      "Answer": [0],
+      "Explanation": "O comando `jobs` lista processos em segundo plano no shell atual.",
+      "Hint": "É feito com jobs."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando traz um job para foreground?",
+      "Options": ["fg %1", "bg %1", "jobs -f", "ps -f"],
+      "Answer": [0],
+      "Explanation": "O comando `fg %1` traz o job para foreground.",
+      "Hint": "É feito com fg."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando envia um job para background?",
+      "Options": ["bg %1", "fg %1", "jobs -b", "ps -b"],
+      "Answer": [0],
+      "Explanation": "O comando `bg %1` envia o job para background.",
+      "Hint": "É feito com bg."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra tempo de execução de processos?",
+      "Options": ["ps -eo pid,etime,cmd", "top -etime", "htop -t", "jobs -t"],
+      "Answer": [0],
+      "Explanation": "O comando `ps -eo pid,etime,cmd` mostra tempo de execução dos processos.",
+      "Hint": "É feito com ps."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando mostra prioridade de processos?",
+      "Options": ["ps -eo pid,pri,cmd", "top -pri", "htop -p", "nice -l"],
+      "Answer": [0],
+      "Explanation": "O comando `ps -eo pid,pri,cmd` mostra prioridade dos processos.",
+      "Hint": "É feito com ps."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando altera prioridade de um processo?",
+      "Options": ["renice -n 10 -p PID", "nice -n 10 comando", "ps -renice PID", "prio PID 10"],
+      "Answer": [0],
+      "Explanation": "O comando `renice` altera prioridade de um processo já em execução.",
+      "Hint": "É feito com renice."
+    },
+    {
+      "type": "singleSelect",
+      "Question": "Qual comando inicia um processo com prioridade definida?",
+      "Options": ["nice -n 10 comando", "renice -n 10 comando", "prio comando 10", "ps -nice comando"],
+      "Answer": [0],
+      "Explanation": "O comando `nice -n 10 comando` inicia processo com prioridade definida.",
+      "Hint": "É feito com nice."
+    }
+  ],
+  "Title": "Practice Test - Usuários e Grupos (Questões 1 a 10)",
+  "Type": "quiz"
+}
+

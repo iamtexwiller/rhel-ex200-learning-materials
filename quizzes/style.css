@@ -1,0 +1,106 @@
+body {
+  font-family: 'Red Hat Text', Arial, sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.quiz-card {
+  background: #fff;
+  padding: 40px;
+  margin: 40px auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 700px;
+  max-width: 95%;
+}
+
+h1 {
+  font-size: 22px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.progress {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  border-radius: 4px;
+  height: 8px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+.progress-fill {
+  background: #cc0000; /* vermelho Red Hat */
+  height: 8px;
+  width: 0%;
+  transition: width 0.3s;
+}
+
+.question {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.options label {
+  display: block;
+  background: #f5f5f5;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  transition: background 0.2s, border 0.2s;
+}
+.options label:hover {
+  background: #eaeaea;
+  border-color: #bbb;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  background: #cc0000; /* vermelho Red Hat */
+  color: #fff;
+}
+button:hover {
+  background: #a30000;
+}
+
+/* Resultado final */
+.result-pass {
+  color: #2e7d32;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+.result-fail {
+  color: #c62828;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
